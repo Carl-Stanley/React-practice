@@ -1,5 +1,5 @@
 import React from "react";
 
-const Message = props => <h1>{props.propsMessage} My Name is {props.propsName}</h1>
+const Message = props => <h4>{props.propsMessage} </h4>
 
 export default Message; 

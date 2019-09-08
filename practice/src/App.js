@@ -2,17 +2,23 @@ import React, { Component } from 'react';
 import './App.css';
 import MyApp from './components/MyComponent';
 import Message from './components/MessageComponent';
+import Name from './components/NameComponent';
 
 class App extends Component {
   constructor () {
    super ();
    this.state = {
-        message: "Hello From props",
-        name: "carl"
+        message: "",
+        name: "Gladiator"
    };
 
   }
   
+  handleChangeFunction = event => {
+
+    this.setState({message: event.target.value});
+
+  };
   render () {
 
   return (
@@ -21,9 +27,15 @@ class App extends Component {
       <header className="App-header">
 
       <MyApp />
-      <h1>{this.state.message} My name is {this.state.name}</h1>  
+      
+      <h4>{this.state.message} My name is {this.state.name}</h4>  
 
-      <Message propsMessage={this.state.message} propsName ={this.state.name}/>
+      <Message propsMessage={this.state.message}/> 
+      
+      <Name propsName ={this.state.name}/>
+      
+      <input onChange={this.handleChangeFunction} />
+
       </header>
 
       

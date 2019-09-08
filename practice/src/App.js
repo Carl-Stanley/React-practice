@@ -3,6 +3,7 @@ import './App.css';
 import MyApp from './components/MyComponent';
 import Message from './components/MessageComponent';
 import Name from './components/NameComponent';
+import ReactDom from "react-dom";
 
 class App extends Component {
   constructor () {
@@ -19,6 +20,16 @@ class App extends Component {
     this.setState({message: event.target.value});
 
   };
+
+  handleSingleClickEvent = () => alert('Single Click Event Triggered');
+
+
+  handleDoubleClickEvent = () => alert('Double Click Event Triggered');
+   
+  handleMouseEnter  = () => alert('Mouse Enter');
+
+  handleMouseLeave  = () => alert('Mouse Leave');
+
   render () {
 
   return (
@@ -35,6 +46,12 @@ class App extends Component {
       <Name propsName ={this.state.name}/>
       
       <input onChange={this.handleChangeFunction} />
+      
+      <button onClick={this.handleSingleClickEvent}>Single click</button>
+      <button onDoubleClick={this.handleDoubleClickEvent}>Double Click</button>
+      <div onMouseEnter={this.handleMouseEnter}>Mouse Enter</div>
+      <div onMouseLeave={this.handleMouseLeave}>Mouse Leave</div> 
+      <input type="text" placeholder="change me"></input>
 
       </header>
 

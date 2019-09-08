@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import MyApp from './components/MyComponent';
-import MyApp2 from './components/MyComponent2';
+import Message from './components/MessageComponent';
 
 class App extends Component {
   constructor () {
    super ();
    this.state = {
-      name: "Carl"
+        message: "Hello From props",
+        name: "carl"
    };
 
   }
@@ -20,9 +21,9 @@ class App extends Component {
       <header className="App-header">
 
       <MyApp />
-      <h1>{this.state.name}</h1>  
+      <h1>{this.state.message} My name is {this.state.name}</h1>  
 
-      <MyApp2 />
+      <Message propsMessage={this.state.message} propsName ={this.state.name}/>
       </header>
 
       

@@ -21,6 +21,12 @@ class App extends Component {
 
   };
 
+  handleInputChange = event => {
+
+    console.log(event.target.value);
+
+  }
+
   handleSingleClickEvent = () => alert('Single Click Event Triggered');
 
 
@@ -51,10 +57,12 @@ class App extends Component {
       <button onDoubleClick={this.handleDoubleClickEvent}>Double Click</button>
       <div onMouseEnter={this.handleMouseEnter}>Mouse Enter</div>
       <div onMouseLeave={this.handleMouseLeave}>Mouse Leave</div> 
-      <input type="text" placeholder="change me"></input>
+      <input type="text" placeholder="change me" onChange={this.handleInputChange}></input>
+            
 
       </header>
-
+     
+      
       
 
     </div>

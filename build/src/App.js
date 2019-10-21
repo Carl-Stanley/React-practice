@@ -1,8 +1,31 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+
+
+
+
+
 
 function App() {
+
+  axios({
+    method: 'post',
+    url: 'https://corporate-event-planner-webeu.herokuapp.com/api/auth/login',
+    data: {
+      "email": "collette@test.com",
+      "password": "123456"
+    }
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
+
   return (
     <div className="App">
       <header className="App-header">

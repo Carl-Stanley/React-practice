@@ -9,6 +9,8 @@ import axios from 'axios';
 
 
 function App() {
+  
+  var thetoken = '';
 
   axios({
     method: 'post',
@@ -19,12 +21,29 @@ function App() {
     }
   })
   .then(function (response) {
+    
+    thetoken = response.data.token;
     console.log(response);
+    console.log('The Token 1' + thetoken);
   })
   .catch(function (error) {
     console.log(error);
   });
 
+  axios({
+    method: 'get',
+    url: 'https://corporate-event-planner-webeu.herokuapp.com/api/events',
+    headers: {
+      'Authorization': thetoken,       
+    },
+  })
+  .then(function (response) {
+    console.log(response);
+    console.log();
+  })
+  .catch(function (error) {
+    console.log('The Token 2' + thetoken);
+  });
 
   return (
     <div className="App">

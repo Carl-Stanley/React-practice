@@ -4,14 +4,12 @@ import './App.css';
 import axios from 'axios';
 
 
-
+var thetoken = '';
 
 
 
 function App() {
-  
-  var thetoken = '';
-
+     
   axios({
     method: 'post',
     url: 'https://corporate-event-planner-webeu.herokuapp.com/api/auth/login',
@@ -23,8 +21,7 @@ function App() {
   .then(function (response) {
     
     thetoken = response.data.token;
-    console.log(response);
-    console.log('The Token 1' + thetoken);
+    console.log(thetoken);
   })
   .catch(function (error) {
     console.log(error);
@@ -34,13 +31,12 @@ function App() {
     method: 'get',
     url: 'https://corporate-event-planner-webeu.herokuapp.com/api/events',
     headers: {
-      Authorization: "1eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijo0LCJlbWFpbCI6ImNvbGxldHRlQHRlc3QuY29tIiwiaWF0IjoxNTcxNjkzMTM4LCJleHAiOjE1NzE2OTY3Mzh9.C2F-3k6cvmu1Ytt28yJ3meY86TSBjEqsXQSddHFIPIw",       
-    },
+      Authorization: thetoken       
+    }
   })
   .then(function (response) {
     console.log(response);
-    console.log();
-  })
+    })
   .catch(function (error) {
     console.log(error);
   });

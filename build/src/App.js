@@ -26,12 +26,13 @@ function App() {
   .catch(function (error) {
     console.log(error);
   });
-/*
+ 
+
   axios({
     method: 'get',
     url: 'https://corporate-event-planner-webeu.herokuapp.com/api/events',
     headers: {
-      Authorization: thetoken       
+      Authorization: toString(`${thetoken}`)       
     }
   })
   .then(function (response) {
@@ -39,8 +40,9 @@ function App() {
     })
   .catch(function (error) {
     console.log(error);
+    console.log(`${thetoken}`);
   });
-*/
+ 
   return (
     <div className="App">
       <header className="App-header">

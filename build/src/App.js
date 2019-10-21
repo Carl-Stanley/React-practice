@@ -29,12 +29,12 @@ function App() {
   .catch(function (error) {
     console.log(error);
   });
-
+/*
   axios({
     method: 'get',
     url: 'https://corporate-event-planner-webeu.herokuapp.com/api/events',
     headers: {
-      'Authorization': thetoken,       
+      Authorization: "1eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0Ijo0LCJlbWFpbCI6ImNvbGxldHRlQHRlc3QuY29tIiwiaWF0IjoxNTcxNjkzMTM4LCJleHAiOjE1NzE2OTY3Mzh9.C2F-3k6cvmu1Ytt28yJ3meY86TSBjEqsXQSddHFIPIw",       
     },
   })
   .then(function (response) {
@@ -42,9 +42,9 @@ function App() {
     console.log();
   })
   .catch(function (error) {
-    console.log('The Token 2' + thetoken);
+    console.log(error);
   });
-
+*/
   return (
     <div className="App">
       <header className="App-header">
